@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Drainfield Digital — More calls for septic companies</title>
+  <meta name="description" content="Drainfield Digital helps septic installers get more repair and replacement calls from Google. Profile cleanup, a simple website, and a small ad campaign.">
+  <style>
+    :root {
+      --navy: #0E2148;
+      --green: #2EA650;
+      --green-dark: #248440;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --light: #f4f6f9;
+      --border: #e3e7ee;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3 { color: var(--navy); line-height: 1.2; margin: 0 0 12px; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; margin-bottom: 20px; }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 16px; }
+    section { padding: 56px 0; }
+    section.alt { background: var(--light); }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      overflow: hidden; /* keeps the logo's blank margins off the border */
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    /* logo.png has wide blank space baked in (the artwork is ~44% of the
+       image height), so the image is sized up and pulled in with negative
+       margins to show ~56px of visible logo. */
+    .brand img {
+      height: 128px;
+      width: auto;
+      display: block;
+      margin: -36px 0;
+    }
+    .nav a.btn { font-size: 1rem; padding: 12px 20px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 8px;
+      border: 0;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--green-dark); }
+    .btn.outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn.outline:hover { background: var(--navy); color: #fff; }
+
+    /* Hero */
+    .hero { padding: 72px 0; }
+    .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 620px; }
+    .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .hero .note { font-size: 0.95rem; color: var(--muted); margin-top: 14px; }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .card .num {
+      display: inline-block;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+      width: 32px; height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 50%;
+      margin-bottom: 12px;
+    }
+    ul.plain { padding-left: 20px; margin: 0 0 16px; }
+    ul.plain li { margin-bottom: 8px; }
+
+    /* Offer */
+    .offer {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 36px 28px;
+    }
+    .offer h2, .offer h3 { color: #fff; }
+    .offer .price { font-size: 1.6rem; font-weight: 700; margin: 8px 0; }
+    .offer .price span { font-size: 1rem; font-weight: 400; opacity: 0.85; }
+    .offer .guarantee {
+      border-left: 4px solid var(--green);
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+    .offer .cols { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+    /* FAQ: padding lives on the summary so the whole row is the tap target. */
+    details { border-bottom: 1px solid var(--border); }
+    /* Plain block summary (not flex): flex on <summary> is buggy in older
+       Safari/iOS and Chrome and can stop rows showing or opening. */
+    details summary {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--navy);
+      list-style: none;
+      padding: 16px 36px 16px 0;
+      min-height: 48px;
+      line-height: 1.6;
+      -webkit-tap-highlight-color: transparent;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { content: ""; }
+    details summary::after {
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3rem;
+      line-height: 1;
+      color: var(--green);
+    }
+    details[open] summary::after { content: "–"; }
+    details summary:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    details p { margin: -4px 0 30px; color: var(--muted); }
+
+    /* Contact */
+    .contact { text-align: center; }
+    .contact p { max-width: 560px; margin-left: auto; margin-right: auto; }
+    .contact .email { margin-top: 16px; color: var(--muted); font-size: 0.95rem; }
+    .contact .email a { color: var(--navy); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Sticky call bar: phones only (hidden on desktop). */
+    .call-bar { display: none; }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+        /* room so the sticky bar never covers the footer */
+        padding-bottom: calc(76px + env(safe-area-inset-bottom));
+      }
+      .wrap {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+      }
+      /* Headlines scale with screen width so they don't fill the screen. */
+      h1 { font-size: clamp(1.5rem, 7vw, 1.75rem); }
+      h2 { font-size: clamp(1.25rem, 6vw, 1.4rem); }
+      section { padding: 40px 0; }
+      .hero { padding: 36px 0 40px; }
+      .hero p.lead { font-size: 1.05rem; }
+      .card { padding: 20px; }
+      .nav { padding: 10px 0; }
+      .nav a.btn { display: none; }
+      .brand img { height: 100px; margin: -28px 0; }
+      .offer { padding: 28px 20px; }
+
+      /* Full-width, thumb-sized buttons. */
+      .hero .actions { flex-direction: column; }
+      .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        min-height: 52px;
+        padding: 15px 20px;
+        font-size: 1.05rem;
+      }
+
+      .call-bar {
+        display: block;
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 50;
+        background: #fff;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -4px 14px rgba(14, 33, 72, 0.08);
+        padding: 10px max(16px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+      }
+      .call-bar .btn { min-height: 54px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Drainfield Digital" width="1280" height="720" decoding="async">
+      </a>
+      <a class="btn" href="#contact">Book a free call</a>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>More booked septic jobs from the people already searching for you.</h1>
+      <p class="lead">We help septic installers and repair companies turn Google searches into phone calls, estimates, and replacement jobs. No long contracts. No marketing jargon.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Book a free 15-minute call</a>
+        <a class="btn outline" href="#what-we-do">See what we do</a>
+      </div>
+      <p class="note">We only work with septic companies. One job a month covers the cost.</p>
+    </div>
+  </section>
+
+  <section class="alt" id="problem">
+    <div class="wrap">
+      <h2>Why the phone isn't ringing as much as it should</h2>
+      <p>When a septic system backs up, the homeowner grabs their phone and searches "septic repair near me." Whoever shows up first with a clean listing and a phone number gets the call. Most septic companies lose that call for simple reasons:</p>
+      <div class="grid">
+        <div class="card">
+          <h3>A weak Google listing</h3>
+          <p>Wrong categories, no photos, a handful of reviews, and no mention of drain field or replacement work. Google doesn't know what you do, so it shows someone else.</p>
+        </div>
+        <div class="card">
+          <h3>An old website, or none at all</h3>
+          <p>A site that's hard to read on a phone, with no clear "call now" button. People leave in seconds and call the next company down the list.</p>
+        </div>
+        <div class="card">
+          <h3>Missed calls you never see</h3>
+          <p>Calls come in while you're in a trench. With no tracking, you don't know how many you missed or where they came from.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-do">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p>Three simple things, done in the first 30 days. Nothing you don't need.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="num">1</span>
+          <h3>Google profile cleanup</h3>
+          <p>We fix your categories, add your full service list (pumping, inspection, repair, drain field, full replacement), upload photos, post weekly, and give you a simple text message to ask happy customers for reviews.</p>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3>A simple website</h3>
+          <p>A clean one-page site that loads fast on a phone, says what you do and where, and has a big click-to-call button. If you already have a site, we'll fix the parts that cost you calls.</p>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3>A small ad campaign</h3>
+          <p>Google ads on the urgent searches in your area, like "septic backing up" and "drain field replacement." Every call is tracked, so you can hear the calls and see what they're worth.</p>
+        </div>
+      </div>
+      <p style="margin-top:24px;">You get a short weekly report: how many calls, how many form fills, and a rough value of the jobs. That's it.</p>
+    </div>
+  </section>
+
+  <section class="alt" id="offer">
+    <div class="wrap">
+      <div class="offer">
+        <h2>The offer</h2>
+        <div class="cols">
+          <div>
+            <h3>What it costs</h3>
+            <div class="price">$500 <span>one-time setup</span></div>
+            <p>Covers the Google profile cleanup and your landing page. Waived if you sign on for three months.</p>
+            <div class="price">$1,000 <span>per month</span></div>
+            <p>Our fee for running everything, tracking calls, and sending your weekly report.</p>
+            <p>Ad spend is separate and paid by you directly to Google. We suggest starting around $750–$1,500 a month and adjusting once we see what the calls cost in your area.</p>
+          </div>
+          <div>
+            <h3>The guarantee</h3>
+            <div class="guarantee">
+              <p style="margin:0;"><strong>If you don't get at least 10 new calls in the first 30 days, month two is free.</strong></p>
+            </div>
+            <p style="margin-top:16px;">Month to month after that. If the phone isn't ringing more, you don't keep paying us. One job a month more than covers our fee, and we'll say that again on the call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Common questions</h2>
+      <details>
+        <summary>How fast will I see calls?</summary>
+        <p>Ads can start sending calls within the first week. Google profile changes usually take two to four weeks to show in the map results. We aim for 10 or more new calls in the first 30 days.</p>
+      </details>
+      <details>
+        <summary>Do I have to sign a long contract?</summary>
+        <p>No. It's month to month. The only exception is if you choose the three-month agreement to have the setup fee waived.</p>
+      </details>
+      <details>
+        <summary>I already have a website. Do I need a new one?</summary>
+        <p>Probably not. We'll look at it and fix the things that cost you calls: slow loading on phones, no call button, no mention of the services you want to sell. We only build a new page if yours can't be fixed.</p>
+      </details>
+      <details>
+        <summary>How much time do you need from me?</summary>
+        <p>About an hour at the start to confirm your services, service area, and a few photos. After that, a few minutes a week to read the report.</p>
+      </details>
+      <details>
+        <summary>Do you work with other trades?</summary>
+        <p>No. We only work with septic installers and repair companies, so we know what your customers search for and how to talk to them.</p>
+      </details>
+      <details>
+        <summary>Who pays for the ads?</summary>
+        <p>You do, directly to Google, from your own account. We never mark up ad spend, and you keep the account if we ever stop working together.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="alt contact" id="contact">
+    <div class="wrap">
+      <h2>Let's look at your Google listing together</h2>
+      <p>Book a free 15-minute call. We'll pull up your listing, show you the three things we'd fix first, and you can decide from there. No pressure.</p>
+      <a class="btn" href="mailto:hello@drainfielddigital.com?subject=Free%2015-minute%20call">Book a free 15-minute call</a>
+      <p class="email">Or email us at <a href="mailto:hello@drainfielddigital.com">hello@drainfielddigital.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      &copy; 2026 Drainfield Digital. Marketing for septic installers.
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a class="btn" href="mailto:hello@drainfielddigital.com?subject=Free%2015-minute%20call">Book a free call</a>
+  </div>
+
+</body>
+</html>
