@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Drainfield Digital — More calls for septic companies</title>
-  <meta name="description" content="Drainfield Digital helps septic installers get more repair and replacement calls from Google. Profile cleanup, a simple website, and a small ad campaign.">
+  <title>Drainfield Digital — Never lose a caller to a missed call</title>
+  <meta name="description" content="Missed-call text back for septic companies in Brevard County. When you can't pick up, your caller gets a text from your business in seconds, so they wait for you instead of calling the next company.">
   <style>
     :root {
       --navy: #0E2148;
@@ -27,12 +27,13 @@
     }
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
     h1, h2, h3 { color: var(--navy); line-height: 1.2; margin: 0 0 12px; }
-    h1 { font-size: 2.2rem; }
+    h1 { font-size: 2.4rem; }
     h2 { font-size: 1.7rem; margin-bottom: 20px; }
     h3 { font-size: 1.15rem; }
     p { margin: 0 0 16px; }
     section { padding: 56px 0; }
     section.alt { background: var(--light); }
+    .section-intro { color: var(--muted); max-width: 640px; }
 
     /* Header */
     header {
@@ -89,6 +90,7 @@
 
     /* Hero */
     .hero { padding: 72px 0; }
+    .hero h1 { max-width: 720px; }
     .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 620px; }
     .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
     .hero .note { font-size: 0.95rem; color: var(--muted); margin-top: 14px; }
@@ -105,6 +107,7 @@
       border-radius: 10px;
       padding: 24px;
     }
+    .card p:last-child { margin-bottom: 0; }
     .card .num {
       display: inline-block;
       background: var(--navy);
@@ -116,27 +119,101 @@
       border-radius: 50%;
       margin-bottom: 12px;
     }
-    ul.plain { padding-left: 20px; margin: 0 0 16px; }
-    ul.plain li { margin-bottom: 8px; }
+
+    /* Package */
+    .package {
+      background: #fff;
+      border: 2px solid var(--navy);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .package h3 { font-size: 1.3rem; }
+    .checklist { list-style: none; margin: 0; padding: 0; }
+    .checklist li {
+      position: relative;
+      padding: 12px 0 12px 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .checklist li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 15px;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .checklist li::after {
+      content: "";
+      position: absolute;
+      left: 8px; top: 19px;
+      width: 5px; height: 10px;
+      border: solid #fff;
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg);
+    }
+    .checklist strong { color: var(--navy); display: block; }
+    .addon {
+      margin-top: 20px;
+      border: 1px dashed #b9c2d0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      background: #fff;
+    }
+    .addon .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .addon ul { margin: 8px 0 12px; padding-left: 20px; }
+    .addon p:last-child { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
 
     /* Offer */
     .offer {
       background: var(--navy);
       color: #fff;
       border-radius: 12px;
-      padding: 36px 28px;
+      padding: 40px 32px;
+      text-align: center;
     }
-    .offer h2, .offer h3 { color: #fff; }
-    .offer .price { font-size: 1.6rem; font-weight: 700; margin: 8px 0; }
-    .offer .price span { font-size: 1rem; font-weight: 400; opacity: 0.85; }
+    .offer h2 { color: #fff; }
     .offer .guarantee {
-      border-left: 4px solid var(--green);
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.07);
-      border-radius: 6px;
-      margin-top: 20px;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.35;
+      max-width: 620px;
+      margin: 0 auto 16px;
     }
-    .offer .cols { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .offer .guarantee span { color: #7fdc9a; }
+    .offer .fine { opacity: 0.85; max-width: 560px; margin: 0 auto 24px; }
+
+    /* Areas */
+    .area h3 { margin-bottom: 6px; }
+    .area p { color: var(--muted); }
+    .taken {
+      margin-top: 24px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      border-left: 4px solid var(--green);
+      padding-left: 14px;
+    }
+
+    /* Math */
+    .math { text-align: center; }
+    .math .big {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+    .math p { max-width: 600px; margin-left: auto; margin-right: auto; color: var(--muted); }
 
     /* FAQ: padding lives on the summary so the whole row is the tap target. */
     details { border-bottom: 1px solid var(--border); }
@@ -170,44 +247,51 @@
     details summary:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
     details p { margin: -4px 0 30px; color: var(--muted); }
 
-    /* Contact */
-    .contact { text-align: center; }
-    .contact p { max-width: 560px; margin-left: auto; margin-right: auto; }
-    .contact .email { margin-top: 16px; color: var(--muted); font-size: 0.95rem; }
-    .contact .email a { color: var(--navy); }
-
+    /* Footer with contact */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-      font-size: 0.9rem;
-      color: var(--muted);
+      background: var(--navy);
+      color: #fff;
       text-align: center;
+      padding: 56px 0 28px;
+    }
+    footer h2 { color: #fff; }
+    footer p { max-width: 560px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+    footer .email { margin-top: 16px; font-size: 0.95rem; }
+    footer .email a { color: #fff; }
+    footer .legal {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.9rem;
+      opacity: 0.7;
     }
 
     /* Sticky call bar: phones only (hidden on desktop). */
     .call-bar { display: none; }
 
     @media (max-width: 600px) {
-      body {
-        font-size: 16px;
-        /* room so the sticky bar never covers the footer */
-        padding-bottom: calc(76px + env(safe-area-inset-bottom));
-      }
+      body { font-size: 16px; }
       .wrap {
         padding-left: max(20px, env(safe-area-inset-left));
         padding-right: max(20px, env(safe-area-inset-right));
       }
       /* Headlines scale with screen width so they don't fill the screen. */
-      h1 { font-size: clamp(1.5rem, 7vw, 1.75rem); }
+      h1 { font-size: clamp(1.7rem, 8.2vw, 2rem); }
       h2 { font-size: clamp(1.25rem, 6vw, 1.4rem); }
       section { padding: 40px 0; }
       .hero { padding: 36px 0 40px; }
       .hero p.lead { font-size: 1.05rem; }
       .card { padding: 20px; }
+      .package { padding: 22px 20px; }
+      .addon { padding: 18px 20px; }
       .nav { padding: 10px 0; }
       .nav a.btn { display: none; }
       .brand img { height: 100px; margin: -28px 0; }
-      .offer { padding: 28px 20px; }
+      .offer { padding: 32px 20px; }
+      .offer .guarantee { font-size: 1.25rem; }
+      .math .big { font-size: 1.6rem; }
+      /* Extra bottom room (navy, not white) so the sticky bar never covers the footer. */
+      footer { padding: 44px 0 calc(28px + 76px + env(safe-area-inset-bottom)); }
 
       /* Full-width, thumb-sized buttons. */
       .hero .actions { flex-direction: column; }
@@ -245,131 +329,169 @@
     </div>
   </header>
 
+  <!-- 1. Hero -->
   <section class="hero" id="top">
     <div class="wrap">
-      <h1>More booked septic jobs from the people already searching for you.</h1>
-      <p class="lead">We help septic installers and repair companies turn Google searches into phone calls, estimates, and replacement jobs. No long contracts. No marketing jargon.</p>
+      <h1>Never lose a caller to a missed call.</h1>
+      <p class="lead">When you can't pick up, your caller gets a text from your business in seconds, so they wait for you instead of calling the next septic company.</p>
       <div class="actions">
         <a class="btn" href="#contact">Book a free 15-minute call</a>
-        <a class="btn outline" href="#what-we-do">See what we do</a>
+        <a class="btn outline" href="#how-it-works">See how it works</a>
       </div>
-      <p class="note">We only work with septic companies. One job a month covers the cost.</p>
+      <p class="note">Built for septic companies in Brevard County. One company per area.</p>
     </div>
   </section>
 
-  <section class="alt" id="problem">
+  <!-- 2. How it works -->
+  <section class="alt" id="how-it-works">
     <div class="wrap">
-      <h2>Why the phone isn't ringing as much as it should</h2>
-      <p>When a septic system backs up, the homeowner grabs their phone and searches "septic repair near me." Whoever shows up first with a clean listing and a phone number gets the call. Most septic companies lose that call for simple reasons:</p>
-      <div class="grid">
-        <div class="card">
-          <h3>A weak Google listing</h3>
-          <p>Wrong categories, no photos, a handful of reviews, and no mention of drain field or replacement work. Google doesn't know what you do, so it shows someone else.</p>
-        </div>
-        <div class="card">
-          <h3>An old website, or none at all</h3>
-          <p>A site that's hard to read on a phone, with no clear "call now" button. People leave in seconds and call the next company down the list.</p>
-        </div>
-        <div class="card">
-          <h3>Missed calls you never see</h3>
-          <p>Calls come in while you're in a trench. With no tracking, you don't know how many you missed or where they came from.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="what-we-do">
-    <div class="wrap">
-      <h2>What we do</h2>
-      <p>Three simple things, done in the first 30 days. Nothing you don't need.</p>
+      <h2>How it works</h2>
+      <p class="section-intro">You're in a trench or driving a pump truck. The phone rings and you can't get to it. Here's what happens next.</p>
       <div class="grid">
         <div class="card">
           <span class="num">1</span>
-          <h3>Google profile cleanup</h3>
-          <p>We fix your categories, add your full service list (pumping, inspection, repair, drain field, full replacement), upload photos, post weekly, and give you a simple text message to ask happy customers for reviews.</p>
+          <h3>Your calls ring your cell, like normal</h3>
+          <p>We give you a local number that rings straight to your cell phone. Nothing changes about how you answer.</p>
         </div>
         <div class="card">
           <span class="num">2</span>
-          <h3>A simple website</h3>
-          <p>A clean one-page site that loads fast on a phone, says what you do and where, and has a big click-to-call button. If you already have a site, we'll fix the parts that cost you calls.</p>
+          <h3>Missed call? They get a text right away</h3>
+          <p>If you don't answer, the caller gets a text from your business within seconds letting them know you'll get right back to them.</p>
         </div>
         <div class="card">
           <span class="num">3</span>
-          <h3>A small ad campaign</h3>
-          <p>Google ads on the urgent searches in your area, like "septic backing up" and "drain field replacement." Every call is tracked, so you can hear the calls and see what they're worth.</p>
+          <h3>You text back when you're free</h3>
+          <p>Their reply comes straight to your phone. When you climb out of the hole, you text them back and book the job.</p>
         </div>
       </div>
-      <p style="margin-top:24px;">You get a short weekly report: how many calls, how many form fills, and a rough value of the jobs. That's it.</p>
     </div>
   </section>
 
+  <!-- 3. What's included -->
+  <section id="included">
+    <div class="wrap">
+      <h2>What's included</h2>
+      <div class="package">
+        <h3>The "Never miss a job" package</h3>
+        <ul class="checklist">
+          <li><strong>Missed-call text back</strong>Every caller you can't answer gets a text from your business in seconds.</li>
+          <li><strong>Google review requests</strong>After each job, your customer gets a short text asking for a Google review.</li>
+          <li><strong>Pumping reminders</strong>Past customers get a reminder when they're due for pumping, every 3 to 5 years.</li>
+          <li><strong>After-hours text replies</strong>Calls that come in at night or on weekends get a text so the caller knows you'll be in touch.</li>
+        </ul>
+      </div>
+      <div class="addon">
+        <span class="tag">Optional add-on</span>
+        <h3>Get found by more callers</h3>
+        <ul>
+          <li>Google listing cleanup: the right categories, services, photos and hours.</li>
+          <li>A small Google ads campaign on urgent searches like "septic backing up" in your area.</li>
+        </ul>
+        <p>Not required. We'll only suggest it if it makes sense for your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Offer / guarantee -->
   <section class="alt" id="offer">
     <div class="wrap">
       <div class="offer">
-        <h2>The offer</h2>
-        <div class="cols">
-          <div>
-            <h3>What it costs</h3>
-            <div class="price">$500 <span>one-time setup</span></div>
-            <p>Covers the Google profile cleanup and your landing page. Waived if you sign on for three months.</p>
-            <div class="price">$1,000 <span>per month</span></div>
-            <p>Our fee for running everything, tracking calls, and sending your weekly report.</p>
-            <p>Ad spend is separate and paid by you directly to Google. We suggest starting around $750–$1,500 a month and adjusting once we see what the calls cost in your area.</p>
-          </div>
-          <div>
-            <h3>The guarantee</h3>
-            <div class="guarantee">
-              <p style="margin:0;"><strong>If you don't get at least 10 new calls in the first 30 days, month two is free.</strong></p>
-            </div>
-            <p style="margin-top:16px;">Month to month after that. If the phone isn't ringing more, you don't keep paying us. One job a month more than covers our fee, and we'll say that again on the call.</p>
-          </div>
-        </div>
+        <h2>Try it free</h2>
+        <!-- EDIT OFFER HERE: this is the only place the guarantee wording appears. -->
+        <p class="guarantee"><span>First month free.</span> If it doesn't save you at least one job, you don't pay.</p>
+        <!-- END OFFER -->
+        <p class="fine">Month to month after that. No long contract.</p>
+        <a class="btn" href="#contact">Book a free 15-minute call</a>
       </div>
     </div>
   </section>
 
+  <!-- 5. One company per area -->
+  <section id="areas">
+    <div class="wrap">
+      <h2>One septic company per area</h2>
+      <p class="section-intro">We only work with one septic company in each area, so we're never helping the company you're competing with.</p>
+      <div class="grid">
+        <div class="card area">
+          <h3>North Brevard</h3>
+          <p>Titusville, Cocoa</p>
+        </div>
+        <div class="card area">
+          <h3>Central Brevard</h3>
+          <p>Melbourne, Viera, Rockledge</p>
+        </div>
+        <div class="card area">
+          <h3>South Brevard</h3>
+          <p>Palm Bay to Sebastian</p>
+        </div>
+      </div>
+      <p class="taken">Once your area is taken, it's taken.</p>
+    </div>
+  </section>
+
+  <!-- 6. Simple math -->
+  <section class="alt math" id="math">
+    <div class="wrap">
+      <h2>The simple math</h2>
+      <p class="big">One saved pumping job pays for the month.</p>
+      <p>Every missed call is a job that might go to the next company on Google. If this keeps even one of those callers waiting for you instead, it has paid for itself.</p>
+    </div>
+  </section>
+
+  <!--
+    TESTIMONIAL PLACEHOLDER
+    Add a real customer quote here once you have one (with their permission).
+    To use it: remove the comment markers around the section below and fill in the text.
+
+  <section id="testimonial">
+    <div class="wrap">
+      <div class="card">
+        <p>"[Customer's own words go here.]"</p>
+        <p><strong>[Name]</strong>, [Company], [Town]</p>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- 7. FAQ -->
   <section id="faq">
     <div class="wrap">
       <h2>Common questions</h2>
       <details>
-        <summary>How fast will I see calls?</summary>
-        <p>Ads can start sending calls within the first week. Google profile changes usually take two to four weeks to show in the map results. We aim for 10 or more new calls in the first 30 days.</p>
+        <summary>Do I need a new phone?</summary>
+        <p>No. You keep the phone and the number you have now. The local number we give you simply rings your cell like any other call.</p>
       </details>
       <details>
-        <summary>Do I have to sign a long contract?</summary>
-        <p>No. It's month to month. The only exception is if you choose the three-month agreement to have the setup fee waived.</p>
+        <summary>Will customers know it's automated?</summary>
+        <p>The text comes from your business name and we write it with you, so it sounds like you. It doesn't pretend to be a person. It just lets the caller know you're on a job and will get back to them shortly, which is what most people want to hear.</p>
       </details>
       <details>
-        <summary>I already have a website. Do I need a new one?</summary>
-        <p>Probably not. We'll look at it and fix the things that cost you calls: slow loading on phones, no call button, no mention of the services you want to sell. We only build a new page if yours can't be fixed.</p>
+        <summary>Do I have to sign a contract?</summary>
+        <p>No. It's month to month, and the first month is free. If it isn't worth it, you stop.</p>
       </details>
       <details>
-        <summary>How much time do you need from me?</summary>
-        <p>About an hour at the start to confirm your services, service area, and a few photos. After that, a few minutes a week to read the report.</p>
+        <summary>What if I already have a receptionist?</summary>
+        <p>That's fine. The text only goes out when a call isn't answered, so it covers the gaps: lunch breaks, busy lines, two calls at once, and after hours.</p>
       </details>
       <details>
-        <summary>Do you work with other trades?</summary>
-        <p>No. We only work with septic installers and repair companies, so we know what your customers search for and how to talk to them.</p>
+        <summary>What areas do you serve?</summary>
+        <p>Brevard County, split into three areas: North (Titusville and Cocoa), Central (Melbourne, Viera and Rockledge), and South (Palm Bay to Sebastian). We work with one septic company in each.</p>
       </details>
       <details>
-        <summary>Who pays for the ads?</summary>
-        <p>You do, directly to Google, from your own account. We never mark up ad spend, and you keep the account if we ever stop working together.</p>
+        <summary>How fast can you set it up?</summary>
+        <p>Usually within 2 to 3 weeks, since new business texting numbers need carrier approval. Most of what we need comes from one short call with you: your business name, hours, and how you'd like the text to read.</p>
       </details>
     </div>
   </section>
 
-  <section class="alt contact" id="contact">
+  <!-- 8. Footer with contact -->
+  <footer id="contact">
     <div class="wrap">
-      <h2>Let's look at your Google listing together</h2>
-      <p>Book a free 15-minute call. We'll pull up your listing, show you the three things we'd fix first, and you can decide from there. No pressure.</p>
+      <h2>Stop losing jobs to missed calls</h2>
+      <p>Book a free 15-minute call. We'll walk you through how it works and check whether your area is still open. No pressure.</p>
       <a class="btn" href="mailto:hello@drainfielddigital.com?subject=Free%2015-minute%20call">Book a free 15-minute call</a>
       <p class="email">Or email us at <a href="mailto:hello@drainfielddigital.com">hello@drainfielddigital.com</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      &copy; 2026 Drainfield Digital. Marketing for septic installers.
+      <p class="legal">&copy; 2026 Drainfield Digital. Missed-call text back for septic companies in Brevard County, Florida.</p>
     </div>
   </footer>
 
