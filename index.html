@@ -120,6 +120,24 @@
       margin-bottom: 12px;
     }
 
+    /* Stat cards (right below the hero, so less top padding) */
+    .stats { padding-top: 8px; }
+    .stat { border-top: 4px solid var(--green); display: flex; flex-direction: column; }
+    .stat .figure {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .stat .source {
+      margin-top: auto;
+      padding-top: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .stat .source a { color: var(--muted); }
+
     /* Package */
     .package {
       background: #fff;
@@ -288,6 +306,8 @@
       .hero { padding: 36px 0 40px; }
       .hero p.lead { font-size: 1.05rem; }
       .card { padding: 20px; }
+      .stats { padding-top: 0; }
+      .stat .figure { font-size: 1.7rem; }
       .package { padding: 22px 20px; }
       .addon { padding: 18px 20px; }
       .nav { padding: 10px 0; }
@@ -345,6 +365,30 @@
         <a class="btn outline" href="#how-it-works">See how it works</a>
       </div>
       <p class="note">Built for septic companies in Brevard County. One company per area.</p>
+    </div>
+  </section>
+
+  <!-- 1b. Why missed calls cost you jobs -->
+  <section class="stats" id="why">
+    <div class="wrap">
+      <h2>Why missed calls cost you jobs</h2>
+      <div class="grid">
+        <div class="card stat">
+          <p class="figure">About half</p>
+          <p>About half of calls to home service companies never reach a person.</p>
+          <p class="source">Source: <a href="https://www.invoca.com/reports/the-invoca-home-services-lead-conversion-benchmarks-report-2026" target="_blank" rel="noopener">Invoca Home Services Benchmarks Report, 2026</a></p>
+        </div>
+        <div class="card stat">
+          <p class="figure">78%</p>
+          <p>78% of people say they've given up on a business after a call went unanswered, and only 42% leave a voicemail.</p>
+          <p class="source">Source: <a href="https://www.callrail.com/blog/missed-calls-cost-businesses-more-than-ever" target="_blank" rel="noopener">CallRail survey of 1,000 US consumers, 2025</a></p>
+        </div>
+        <div class="card stat">
+          <p class="figure">$5,000+</p>
+          <p>Routine maintenance runs $250 to $500 every few years, and repairing or replacing a failed system can cost $5,000 to $15,000.</p>
+          <p class="source">Source: <a href="https://www.epa.gov/septic/why-maintain-your-septic-system" target="_blank" rel="noopener">US EPA</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
