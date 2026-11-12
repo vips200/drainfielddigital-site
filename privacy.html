@@ -56,7 +56,23 @@
     }
     footer a { color: #fff; }
     footer p { margin: 0 0 8px; opacity: 0.85; }
+    /* Trade links in the header */
+    .trades { display: flex; gap: 22px; margin-left: auto; }
+    .trades a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .trades a:hover { border-bottom-color: var(--border); }
+    .trades a[aria-current="page"] { color: var(--green-dark, #248440); border-bottom-color: var(--green); }
+    .trades + .back { margin-left: 10px; }
+
     @media (max-width: 600px) {
+      /* Trade links: same row as the logo if they fit, otherwise wrap under it. */
+      .nav { flex-wrap: wrap; row-gap: 0; column-gap: 14px; }
+      .trades { gap: 16px; font-size: 0.95rem; }
       body { font-size: 16px; }
       .brand img { height: 100px; margin: -28px 0; }
       h1 { font-size: 1.6rem; }
@@ -68,6 +84,11 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="/"><img src="logo.png" alt="Drainfield Digital" width="1280" height="720" decoding="async"></a>
+      <nav class="trades" aria-label="Trades we serve">
+        <a href="/">Septic</a>
+        <a href="/plumbers">Plumbers</a>
+        <a href="/hvac">HVAC</a>
+      </nav>
       <a class="back" href="/">Home</a>
     </div>
   </header>

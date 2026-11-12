@@ -289,7 +289,22 @@
     /* Sticky call bar: phones only (hidden on desktop). */
     .call-bar { display: none; }
 
+    /* Trade links in the header */
+    .trades { display: flex; gap: 22px; margin-left: auto; }
+    .trades a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .trades a:hover { border-bottom-color: var(--border); }
+    .trades a[aria-current="page"] { color: var(--green-dark, #248440); border-bottom-color: var(--green); }
+
     @media (max-width: 600px) {
+      /* Trade links: same row as the logo if they fit, otherwise wrap under it. */
+      .nav { flex-wrap: wrap; row-gap: 0; column-gap: 14px; }
+      .trades { gap: 22px; font-size: 0.95rem; flex-basis: 100%; margin-left: 0; padding-bottom: 2px; }
       body { font-size: 16px; }
       .wrap {
         padding-left: max(20px, env(safe-area-inset-left));
@@ -306,7 +321,7 @@
       .stat .figure { font-size: 1.7rem; }
       .package { padding: 22px 20px; }
       .addon { padding: 18px 20px; }
-      .nav { padding: 10px 0; }
+      .nav { padding-top: 10px; padding-bottom: 10px; }
       .nav a.btn { display: none; }
       .brand img { height: 100px; margin: -28px 0; }
       .offer { padding: 32px 20px; }
@@ -388,6 +403,11 @@
       <a class="brand" href="/">
         <img src="logo.png" alt="Drainfield Digital" width="1280" height="720" decoding="async">
       </a>
+      <nav class="trades" aria-label="Trades we serve">
+        <a href="/">Septic</a>
+        <a href="/plumbers" aria-current="page">Plumbers</a>
+        <a href="/hvac">HVAC</a>
+      </nav>
       <a class="btn" href="#contact">Book a free call</a>
     </div>
   </header>
